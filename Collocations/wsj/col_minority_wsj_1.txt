@@ -1,0 +1,8 @@
+#Total No. of Collocate Types: 6
+#Total No. of Collocate Tokens: 18
+1	5	0	5	9.56048	communities
+2	4	4	0	3.86351	and
+3	3	0	3	6.62473	officers
+4	2	2	0	2.57904	of
+5	2	2	0	6.06862	more
+6	2	0	2	8.69798	members

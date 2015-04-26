@@ -1,0 +1,7 @@
+#Total No. of Collocate Types: 5
+#Total No. of Collocate Tokens: 15
+1	4	0	4	6.40754	community
+2	3	3	0	0.45730	the
+3	3	0	3	9.35159	neighborhoods
+4	3	3	0	1.75329	and
+5	2	0	2	6.64633	communities

@@ -1,0 +1,66 @@
+Pre-Proccessing of the Corpus
+
+Replaces '' with "
+
+sed -r s/\'\'/\"/g *.txt | wc -l
+8202
+This command does not work to count the total number of matching patterns
+
+
+Here is a working example of how to count the number of matching patterns from a piped sed output:
+sed -r 's/\b[aA]frican\s[aA]merican\b/AfricanAmerican/g' *.txt | grep --line-buffered -o "AfricanAmerican" | wc -l = 20
+
+The issue here is that you must know the token you are looking for, so it is difficult if you want to make the matching pattern of grep here a variable that is the same value as the matching pattern in the sed parameters...
+
+
+Deletes space or hyphen between all bigrams of {african american, african americans, african-american, african-americans}
+(-i overwrites original file)
+sed -ri 's/\b[aA]frican.[aA]merican\b/AfricanAmerican/g' *.txt
+sed -ri 's/\b[aA]frican.[aA]mericans\b/AfricanAmerican/g' *.txt
+
+130 total occurances replaced within corpus (confirmed with grep -o | wc -l
+
+
+
+Prepending & Postpending \n delimited stoplist to generate a series of sed commands to delete pattern using VIM:
+
+To prepose all lines:
+%s/^/sed -r "s\/\\b
+
+To Postpose all lines:
+%s/$/\\b\/\/g" *.txt
+
+
+%s/\ss/ "s/g
+
+
+Finally, insert escape character before all apostrophes:
+%s/'/\\'/g
+
+
+sed -r -e  "s/\bnow\b//g" *.txt | grep --line-buffered -o "now" | wc -l
+
+
+When you are ready to commit to the changes and overwrite the original files when you run the shell script, simply replace -r with -ri:
+
+%s/-r/-r -e -i /g
+
+The output of these two substitution commands in VIM is a list of sed commands; here's an example:
+
+Before:
+
+will
+
+After:
+
+sed -r s/\bwill\b//g *.txt
+
+\b marks a word boundary
+
+Also, save the file to a shell script and add a processing instruction at the top AFTER commands %s commands
+#!/bin/bash
+
+
+
+
+

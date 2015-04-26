@@ -1,0 +1,14 @@
+#Total No. of Collocate Types: 12
+#Total No. of Collocate Tokens: 114
+1	47	47	0	5.91706	an
+2	33	0	33	5.75749	black
+3	7	0	7	4.98771	year
+4	5	5	0	-1.04520	the
+5	4	1	3	4.92144	young
+6	4	0	4	4.87081	teenager
+7	3	2	1	0.98643	was
+8	3	0	3	4.61332	africanamerican
+9	2	0	2	3.31601	missouri
+10	2	0	2	3.49613	man
+11	2	2	0	2.05354	been
+12	2	2	0	-1.07114	and

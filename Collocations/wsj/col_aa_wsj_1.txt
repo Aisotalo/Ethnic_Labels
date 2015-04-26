@@ -1,0 +1,14 @@
+#Total No. of Collocate Types: 12
+#Total No. of Collocate Tokens: 31
+1	5	5	0	5.28013	are
+2	4	4	0	6.88420	unarmed
+3	3	3	0	9.52806	thirds
+4	3	0	3	6.98374	teenager
+5	2	0	2	6.10179	while
+6	2	2	0	0.30707	the
+7	2	0	2	8.72070	students
+8	2	0	2	5.77317	shot
+9	2	2	0	5.15302	old
+10	2	2	0	1.40912	of
+11	2	0	2	9.94309	eighty
+12	2	2	0	3.91335	an
