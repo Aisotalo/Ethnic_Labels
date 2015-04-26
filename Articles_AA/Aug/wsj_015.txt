@@ -1,0 +1,31 @@
+Keywords: What Happens When Police Officers Wear Body Cameras
+
+Sometimes, like the moments leading up to when a police officer decides to shoot someone, transparency is an unalloyed good. And especially lately, technology has progressed to a point that it makes this kind of transparency not just possible, but routine.
+
+So it is in Rialto, Calif., where an entire police force is wearing so-called body-mounted cameras, no bigger than pagers, that record everything that transpires between officers and citizens. In the first year after the cameras' introduction, the use of force by officers declined 60%, and citizen complaints against police fell 88%.
+
+It isn't known how many police departments are making regular use of cameras, though it is being considered as a way of perhaps altering the course of events in places such as Ferguson, Mo., where an officer shot and killed an unarmed black teenager.
+
+What happens when police wear cameras isn't simply that tamper-proof recording devices provide an objective record of an encounter -- though some of the reduction in complaints is apparently because of citizens declining to contest video evidence of their behavior -- but a modification of the psychology of everyone involved.
+
+The effect of third-party observers on behavior has long been known: Thomas Jefferson once advised that "whenever you do a thing, act as if all the world were watching." Psychologists have confirmed this intuition, showing that something as primitive as a poster with a pair of glaring eyes can make test subjects behave better, and even reduce theft in an area.
+
+One problem with the cameras, however, has been cost. Fortunately, fierce competition between the two most prominent vendors of the devices, Vievu LLC and Taser International Inc., which makes the cameras used by Rialto police, has driven the price of individual cameras down to between $300 and $400. Unfortunately, one place where expenses can mount is in the storage and management of the data they generate.
+
+Both Taser and Vievu offer cloud-based storage systems for a monthly subscription fee. Think of it as an evidence room-as-a-service, where vendors are happy to see police departments outsource some of their most critical functions, and be subject to the same kind of vendor lock-in that can make corporate IT managers weary of the cloud.
+
+But Taser's system stores video data on Amazon.com Inc.'s cloud, where prices are falling rapidly, and there isn't much about cameras from either vendor that couldn't be reproduced by an enterprising startup. Given that body-worn cameras use components from the mobile industry, where prices are ground down by scale and competition, it's possible police forces will soon be able to come up with their own solutions, or use off-the shelf products such as Google Glass.
+
+These are all reasons that Michael White, a professor of criminology at Arizona State University and, as the sole author of the Justice Department's report on police and body-mounted cameras, says the cameras, now a curiosity, could soon be ubiquitous. It has happened before: Taser's guns went from introduction to use by more than two-thirds of America's 18,000 police departments in about a decade. "It could be as little as 10 years until we see most police wearing these," says Dr. White.
+
+Not everyone is happy about this possibility. After an order by a federal judge that the New York Police Department equip officers with body-worn cameras in some districts, the Patrolmen's Benevolent Association issued a report declaring that they would be an "encumbrance." In the mid-1990s the rollout of dashboard cameras, now standard issue in most patrol cars, met the same resistance, which is why Dr. White says it is important that the adoption of this technology be accomplished through consensus.
+
+Still, privacy issues abound. Officers would have to turn on their cameras during every encounter with citizens, argues the American Civil Liberties Union, but there might be exceptions, such as when officers are interviewing victims of assault, says Dr. White.
+
+None of these issues have stopped police forces in the U.K., where departments have a decade head start on their counterparts in the U.S., from ever-wider adoption. Police in England and Wales are engaged in large-scale trials, and the aim is to make body-worn cameras standard issue.
+
+In the U.K., where tests with them began in 2005, studies have shown that they aid in the prosecution of crimes, by providing additional, and uniquely compelling, evidence. In the U.S., in some instances they have shortened the amount of time required to investigate a shooting by police from two-to-three months to two-to-three days.
+
+And they represent yet one more way we are being recorded by means that could eventually be leaked to the public.
+
+Of course, sometimes events happen that accelerate the adoption of a technological fix. The tragic irony is that police in Ferguson have a stock of body-worn cameras, but have yet to deploy them to officers.
