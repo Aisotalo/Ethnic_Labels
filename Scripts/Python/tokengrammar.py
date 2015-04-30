@@ -7,6 +7,5 @@ with open("ids.dat", "r") as txt:
 for line in lines:
 	line = line.strip()
 	print(line)
-	os.system("ucto -v -L en "  + line + " output_" + line)
-#	os.system("./tokenizer.py -t -i -n 1 " + line)
+	os.system("./tokenizer.py -t -i -n 1 " + line)
 

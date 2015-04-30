@@ -1,0 +1,219 @@
+Total Tokens In Articles (ignoring case; whitespace before and after token):
+
+
+Antconc - all files
+
+Word List = 180309
+
+Bash
+
+cat *.txt | wc -w = 178263
+
+
+
+
+Blacks*
+
+\b[bB]lack\b = 647
+
+\b[bB]lacks\b = 99
+
+\b[bB]lacks*\b = 746
+
+
+African.Americans*
+
+\b[aA]frican\s[aA]merican\b = 20
+
+\b[aA]frican-[aA]merican\b = 70
+
+\b[aA]frican[-\s][aA]merican\b = 90
+
+
+\b[aA]frican\s[aA]mericans\b = 14
+
+\b[aA]frican-[aA]mericans\b = 26
+
+\b[aA]frican[-\s][aA]mericans*\b = 40
+
+Matching_Pattern: {african american, african americans, african-american, african-americans}
+\b[aA]frican[-\s][aA]mericans*\b = 130
+
+
+Whites*
+
+\bwhite\b = 382
+
+\bwhites\b = 60
+
+\bwhites*\b = 442
+
+
+Color
+
+\b[cC]olor\b = 26
+
+
+Minority
+
+\b[mM]inority\b = 36
+
+
+Unarmed
+
+\b[uU]narmed\b = 170
+
+
+Unarmed Black
+
+\b[uU]narmed\s[bB]lack\b = 82
+
+
+
+
+Grep - all files
+
+blacks*
+
+grep -io "\bblack\b" *.txt | wc -l = 647
+
+grep -io "\bblacks\b" *.txt | wc -l = 99
+
+grep -io "\bblacks*\b" *.txt | wc -l = 746
+
+
+African.Americans*
+
+grep -io "\bafrican\samerican\b" *.txt | wc -l = 20
+
+grep -io "\bafrican-american\b" *.txt | wc -l = 70
+
+grep -io "\bafrican.american\b" *.txt | wc -l = 90
+
+
+grep -io "\bafrican\samericans\b" *.txt | wc -l = 14
+
+grep -io "\bafrican-americans\b" *.txt | wc -l = 26
+
+grep -io "\bafrican.americans\b" *.txt | wc -l = 40
+
+
+grep -io "\bafrican.americans*\b" *.txt | wc -l = 130
+
+
+Whites*
+
+grep -io "\bwhite\b" *.txt | wc -l = 382
+
+grep -io "\bwhites\b" *.txt | wc -l = 60
+
+grep -io "\bwhites*\b" *.txt | wc -l = 442
+
+color
+
+grep -io "\bcolor\b" *.txt | wc -l = 26
+
+
+Minority
+
+grep -io "\bminority\b" *.txt | wc -l = 36
+
+
+Man
+
+grep -io "\bman\b" *.txt | wc -l = 188
+
+Communities
+
+grep -io "\bcommunities\b" *.txt | wc -l = 100
+
+Unarmed
+
+Aug+Nov
+grep -io "\bunarmed\b" *.txt | wc -l = 170
+
+Aug
+"unarmed" = 100
+
+Nov
+"unarmed" = 70
+
+
+Unarmed Black
+
+Aug+Nov
+grep -io "\bunarmed.black\b" *.txt | wc -l = 83
+
+Aug
+"unarmed black" = 39
+"black" = 300
+
+Nov
+"unarmed black" = 43
+"black" = 347
+
+
+Unarmed AfricanAmerican
+
+Aug+Nov
+grep -io "\bunarmed.AfricanAmerican\b" *.txt | wc -l = 10
+
+Aug
+"Unarmed AfricanAmerican" = 8
+"AfricanAmerican" = 92
+
+Nov
+"Unarmed AfricanAmerican" = 2
+"AfricanAmerican" = 38
+
+
+
+
+
+Comprehensive sed commands to handle all iterations of African.Americans* (do not overwrite files with -i)
+
+sed -r 's/\b[aA]frican\s[aA]merican\b/AfricanAmerican/g' *.txt | grep --line-buffered -o "AfricanAmerican" | wc -l = 20
+sed -r 's/\b[aA]frican-[aA]merican\b/AfricanAmerican/g' *.txt | grep --line-buffered -o "AfricanAmerican" | wc -l = 70
+sed -r 's/\b[aA]frican.[aA]merican\b/AfricanAmerican/g' *.txt | grep --line-buffered -o "AfricanAmerican" | wc -l = 90
+
+sed -r 's/\b[aA]frican\s[aA]mericans\b/AfricanAmerican/g' *.txt | grep --line-buffered -o "AfricanAmerican" | wc -l = 14
+sed -r 's/\b[aA]frican-[aA]mericans\b/AfricanAmerican/g' *.txt | grep --line-buffered -o "AfricanAmerican" | wc -l = 26
+sed -r 's/\b[aA]frican.[aA]mericans\b/AfricanAmerican/g' *.txt | grep --line-buffered -o "AfricanAmerican" | wc -l = 40
+
+sed -r 's/\b[aA]frican.[aA]mericans*\b/AfricanAmerican/g' *.txt | grep --line-buffered -o "AfricanAmerican" | wc -l = 130
+
+
+
+
+
+Totals Summary:
+
+
+black = 647
+
+blacks = 99
+
+(black|blacks) = 746
+
+African American = 20
+
+African Americans = 14
+
+African-American = 70
+
+African-Americans = 26
+
+African(-)American(s) = 130
+
+Color = 26
+
+White = 
+
+Minority = 
+
+Unarmed = 
+
+
+
+
+

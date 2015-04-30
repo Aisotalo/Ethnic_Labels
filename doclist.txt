@@ -1,0 +1,138 @@
+Ethnic_Labels/Articles_AA
+
+- A subdirectory of articles that have been normalized to 'AfricanAmerican' as a single token. Instances of 'African-American' and 'African American' are conflated by removing (-|\s).
+
+/home/tripdubz/Ethnic_Labels/Ethnic_Labels/Data
+- There are a few documents in this directory:
+	
+Ethnic_Labels/Doc
+
+- Some instructions and description of the project
+Ethnic_Labels/doclist.txt
+
+- A description of the archive by directory and file
+
+Ethnic_Labels/ngrams_AA
+
+- Files that pertain to using ucto (Unicode Tokenizer) for Linux, and a ngram script written by Damir Cavar
+
+Ethnic_Labels/Scripts
+
+- Contains scripts based on:
+	- Bash
+		- .sh files to be ran on mac/linux within a terminal
+	- R
+		- .R files, which are projects or scripts to be used in R (I used Rstudio for a GUI)
+	- Python
+		- Scripts written mostly for Python 3
+
+Ethnic_Labels/Scripts/Bash/gen_article_list.sh
+
+- simply generates a list of file names, namely, the Articles_AA files
+
+Ethnic_Labels/Scripts/Python/batchucto.py
+
+- takes a list of files (e.g. ids_aa.dat) as input, reads and opens each one, and runs ucto (english) over it, then saves a new file of the same name with OUTPUT_ prepended to it.
+- I could not get a correct compile of this due to lib dependencies, so I had to specify an external configuration file for English
+
+Ethnic_Labels/Scripts/Python/ngrams.py
+
+- A script Written by Damir Cavar to take tokenized input text, and create a frequency profile
+
+Ethnic_Labels/Scripts/Python/tokengrammar.py
+
+- Python 3 program that simply loops over a list of files and runs the tokenizer.py script
+
+Ethnic_Labels/Scripts/Python/tokenizer.py
+
+- A tokenizer written by Damir Cavar
+
+Ethnic_Labels/Scripts/R/Kmeanscluster.R
+
+- An example R script for kmeans clustering & plot
+
+Ethnic_Labels/Scripts/R/kmeansplot.R
+
+- An example R script for kmeans clustering & plot
+
+Ethnic_Labels/Scripts/R/TDM_KPLOT.R
+
+- This is a cool script. It takes a PATH of tokenized, ngram documents (absolute frequency profiels -- comma seperated), reads them individually, then creates a term-document matrix. 
+- In line 5, for "(i in paths[2:X]) {" set 'X' to the desired number of documents you want to include into the matrix. 
+- Be aware that the data.frame is loaded into RAM, so if you are doing all 180 documents, it might take a while given your machine speed.
+
+Ethnic_Labels/Articles_AA/Aug
+
+- Articles grouped by August 9th 2014 date range
+
+Ethnic_Labels/Articles_AA/MB_ref_UB
+
+- Files that contained a reference to Michael Brown; in hopes of isolating the phrasal patterns involved in his reference.
+- The subdirectories have the publications grouped together
+
+Ethnic_Labels/Articles_AA/Nov
+
+- Articles grouped by November 24th date range
+
+
+Ethnic_Labels/Collocations/
+
+- Directory of collocation derived directly from AntConc involving the various key terms
+	- The files are grouped together by publication
+	- The filename pattern is as follows:
+	col_KEYTERM_PUBLICATION_WINDOWSIZE.txt
+- I don't believe the .txt files are machine readable yet as .csv files, as the total type/tokens are still in the first 2 lines of the output.
+
+Ethnic_Labels/Data/
+
+- Various files related to data
+
+Ethnic_Labels/Data/commands.txt
+
+	- here are some general notes about regular expressions used, sed, grep and other tasks	related to pre-processing a text corpus.
+
+Ethnic_Labels/Data/ids_aa.dat
+
+- simply a list of all of the Articles_AA files, for the use of input through loops.
+
+Ethnic_Labels/Data/News-AfAm-Stats-2-master-only.xls
+
+- This is the original master sheet of the EMU Winter 2015 class project for Discourse Analysis with Eric Acton.
+- I believe the August date range is missing for WSJ.
+
+Ethnic_Labels/Data/Stoplist.txt
+
+- A compiled list of stopwords, to remove non-content words in order to get more 'focused' frequency profiles.
+
+Ethnic_Labels/ngrams_AA/all
+Ethnic_Labels/ngrams_AA/nyt
+Ethnic_Labels/ngrams_AA/twp
+Ethnic_Labels/ngrams_AA/wsj
+Ethnic_Labels/ngrams_AA/all/4grams_all_AA.txt
+Ethnic_Labels/ngrams_AA/all/5grams_all_AA.txt
+Ethnic_Labels/ngrams_AA/all/6grams_all_AA.txt
+Ethnic_Labels/ngrams_AA/all/bigrams_all_AA.txt
+Ethnic_Labels/ngrams_AA/all/trigrams_all_AA.txt
+Ethnic_Labels/ngrams_AA/all/unigrams_all_AA.txt
+Ethnic_Labels/ngrams_AA/nyt/4grams_nyt_AA.txt
+Ethnic_Labels/ngrams_AA/nyt/5grams_nyt_AA.txt
+Ethnic_Labels/ngrams_AA/nyt/6grams_nyt_AA.txt
+Ethnic_Labels/ngrams_AA/nyt/bigrams_nyt_AA.txt
+Ethnic_Labels/ngrams_AA/nyt/trigrams_nyt_AA.txt
+Ethnic_Labels/ngrams_AA/nyt/unigrams_nyt_AA.txt
+Ethnic_Labels/ngrams_AA/twp/4grams_twp_AA.txt
+Ethnic_Labels/ngrams_AA/twp/5grams_twp_AA.txt
+Ethnic_Labels/ngrams_AA/twp/6grams_twp_AA.txt
+Ethnic_Labels/ngrams_AA/twp/bigrams_twp_AA.txt
+Ethnic_Labels/ngrams_AA/twp/trigrams_twp_AA.txt
+Ethnic_Labels/ngrams_AA/twp/unigrams_twp_AA.txt
+Ethnic_Labels/ngrams_AA/wsj/4grams_wsj_AA.txt
+Ethnic_Labels/ngrams_AA/wsj/5grams_wsj_AA.txt
+Ethnic_Labels/ngrams_AA/wsj/6grams_wsj_AA.txt
+Ethnic_Labels/ngrams_AA/wsj/bigrams_wsj_AA.txt
+Ethnic_Labels/ngrams_AA/wsj/trigrams_wsj_AA.txt
+Ethnic_Labels/ngrams_AA/wsj/unigrams_wsj_AA.txt
+
+
+
+

@@ -1,0 +1,111 @@
+Here is a command to list out every file in every sub directory of a path:
+
+ls -R /home/tripdubz/Ethnic_Labels | awk '
+/:$/&&f{s=$0;f=0}
+/:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
+NF&&f{ print s"/"$0 }'
+
+
+Remove empty lines:
+
+sed '/^\s*$/d' *.txt
+
+
+Pre-Proccessing of the Corpus
+
+Replaces '' with "
+
+sed -r s/\'\'/\"/g *.txt | wc -l
+8202
+This command does not work to count the total number of matching patterns
+
+
+Here is a working example of how to count the number of matching patterns from a piped sed output:
+sed -r 's/\b[aA]frican\s[aA]merican\b/AfricanAmerican/g' *.txt | grep --line-buffered -o "AfricanAmerican" | wc -l = 20
+
+The issue here is that you must know the token you are looking for, so it is difficult if you want to make the matching pattern of grep here a variable that is the same value as the matching pattern in the sed parameters...
+
+
+Deletes space or hyphen between all bigrams of {african american, african americans, african-american, african-americans}
+(-i overwrites original file)
+sed -ri 's/\b[aA]frican.[aA]merican\b/AfricanAmerican/g' *.txt
+sed -ri 's/\b[aA]frican.[aA]mericans\b/AfricanAmerican/g' *.txt
+
+130 total occurances replaced within corpus (confirmed with grep -o | wc -l
+
+
+
+Prepending & Postpending \n delimited stoplist to generate a series of sed commands to delete pattern using VIM:
+
+To prepose all lines:
+%s/^/sed -r "s\/\\b
+
+To Postpose all lines:
+%s/$/\\b\/\/g" *.txt
+
+
+%s/\ss/ "s/g
+
+
+Finally, insert escape character before all apostrophes:
+%s/'/\\'/g
+
+
+sed -r -e  "s/\bnow\b//g" *.txt | grep --line-buffered -o "now" | wc -l
+
+
+When you are ready to commit to the changes and overwrite the original files when you run the shell script, simply replace -r with -ri:
+
+%s/-r/-r -e -i /g
+
+The output of these two substitution commands in VIM is a list of sed commands; here's an example:
+
+Before:
+
+will
+
+After:
+
+sed -r s/\bwill\b//g *.txt
+
+\b marks a word boundary
+
+Also, save the file to a shell script and add a processing instruction at the top AFTER commands %s commands
+#!/bin/bash
+
+
+Ucto Notes
+
+The library dependencies for Ubuntu 14.04 are hairy here. I could not get the configure file to produce a make file to officially install all of the paths for the needed (natural language) configuration files needed to run the tokenizer.
+
+therefore, instead, I just specified an absolute path to the English configuration file. An example command looked something like this:
+
+ucto -v -c ~/ucto-0.8.0/config/tokconfig-en in_text_article.txt out_text_article.txt
+
+The 'in_text_article.txt' represents a full text document, as it appears within the published news media. The 'out_text_article.txt' represents a tokenized verbose (-v) version, tab delimited with the token, followed by the corresponding character type/position. These files can either be saved as tab delimited csv's, and processed as such, or a set of sed commands can be used to strip away the type/position TAGS, leaving only the target tokens. If one wants to say, look at the token content of a certain number of paragraphs into the document, it might be useful to pipe the verbose output and leave the type/position TAGS as corresponding columns, in order to parse target paragraph regions. Something like this may be useful for sentiment analysis, with the context boundaries of a target token corresponding to paragraph boundaries. 
+
+Otherwise, here is a series of sed commands to delete everything but tokens:
+To preview substitutions:
+sed -r 's/(WORD)|(NEWPARAGRAPH)|(ENDOFSENTENCE)|(NOSPACE)|(PUNCTUATION)|(E-MAIL)|(BEGINOFSENTENCE)|(ABBREVIATION-KNOWN)|(SUFFIX)|(-COMPOUND)|(NUMBER)|(UNKNOWN)|(-MULTI)|(ABBREVIATION)|(URL)|(-WWW)|(-PAR)|(-ORDINAL)|(INITIAL)|(-DOMAIN)//g' *.txt | less
+To overwrite original files:
+sed -ri 's/(WORD)|(NEWPARAGRAPH)|(ENDOFSENTENCE)|(NOSPACE)|(PUNCTUATION)|(E-MAIL)|(BEGINOFSENTENCE)|(ABBREVIATION-KNOWN)|(SUFFIX)|(-COMPOUND)|(NUMBER)|(UNKNOWN)|(-MULTI)|(ABBREVIATION)|(URL)|(-WWW)|(-PAR)|(-ORDINAL)|(INITIAL)|(-DOMAIN)//g' *.txt
+
+
+Ngram_output
+to trim the ngram_output, simply run:
+sed s/\"//g *.txt
+
+To remove all of the quotes from the tokenized document contents, leaving comma seperated files
+
+Clean http tokens:
+sed -i s/http.*,[0-9]//g *.txt
+
+Trimming Ngram_output
+
+This is to remove all digit tokens:
+egrep "^[0-9].*,[0-9]" *.txt
+
+
+
+
+
